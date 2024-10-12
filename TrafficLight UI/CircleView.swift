@@ -10,7 +10,7 @@ import SwiftUI
 
 struct CircleView: View {
     var color: Color
-    var isActive: Bool
+    var opacity: Double
     
     var body: some View {
         ZStack {
@@ -20,12 +20,12 @@ struct CircleView: View {
             Circle()
                 .foregroundStyle(color)
                 .frame(width: 115)
-                .opacity(isActive ? 1.0 : 0.4)
+                .opacity(opacity)
         }
     }
 }
 
 #Preview {
-    CircleView(color: .red, isActive: true)
+    CircleView(color: .red, opacity: 0.3)
 }
 

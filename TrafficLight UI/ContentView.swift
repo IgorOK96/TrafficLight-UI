@@ -39,14 +39,18 @@ struct ContentView: View {
                     }
                 }
                 VStack {
-                    CircleView(color: .red, isActive: currentLight == .red)
-                    CircleView(color: .yellow, isActive: currentLight == .yellow)
-                    CircleView(color: .green, isActive: currentLight == .green)
+                    CircleView(color: .red, opacity: turnOn(for: .red))
+                    CircleView(color: .yellow, opacity: turnOn(for: .yellow))
+                    CircleView(color: .green, opacity: turnOn(for: .green))
                 }
                 .offset(y: -85)
             }
         }
     }
+
+    private func turnOn(for light: CurrentLight) -> Double {
+            return currentLight == light ? 1.0 : 0.4
+        }
     
     private func traffic() {
         if currentLight == nil {
