@@ -48,23 +48,6 @@ struct ContentView: View {
         }
     }
     
-    struct CircleView: View {
-        var color: Color
-        var isActive: Bool
-        
-        var body: some View {
-            ZStack {
-                Circle()
-                    .foregroundStyle(.gray)
-                    .frame(width: 140)
-                Circle()
-                    .foregroundStyle(color)
-                    .frame(width: 115)
-                    .opacity(isActive ? 1.0 : 0.4)
-            }
-        }
-    }
-    
     private func traffic() {
         if currentLight == nil {
             buttonText = "NEXT"
